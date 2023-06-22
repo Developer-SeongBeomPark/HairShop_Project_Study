@@ -1,0 +1,193 @@
+1. 깃설치
+https://git-scm.com/downloads
+
+- lectureblue 
+  http://lectureblue.pe.kr/reqtiles/read.jsp?bbsno=1153&nowPage=3&col=&word=&code=60
+
+- 깃버전 확인
+  Git Bash에서 버전확인 
+  $ git --version
+
+2. 깃 기본명령어
+http://lectureblue.pe.kr/reqtiles/update.jsp?bbsno=1156&nowPage=3&col=&word=&code=60
+- 지역 저장소
+프로젝트 생성 -> git init -> 프로젝트를 깃 지역 저장소에 지정
+파일 수정 -> git add -> 수정 파일 스테이징 영역 지정 
+ -> git commit -> 지역저장소 저장
+
+- 원격저장소
+지역저장소에서 발생한 변경내용 -> git push -> 원격저장소에 반영
+
+
+3. 저장소 생성
+(1) 지역 저장소 
+  git init
+
+  ls -a  : 깃 내부 확인, .git는 숨겨진 폴더(깃 지역저장소 관리파일, 프랜치, 설정정보등)
+  cd .git
+  ls -l
+
+  rm -rf .git : git init 취소
+
+- spring/workspace/shopping 으로 이동
+  shopping 오른쪽 마무스 클릭 -> Git Bash Here ->
+  git init
+  
+
+- 지역 저장소에 사용자 정보 등록(깃 허브 계정과 동일)
+
+  git config user.name  "사용자 이름"
+  git config user.email  "이메일 주소"
+
+- 깃 설정 파일 확인
+  cat .git/config
+
+(2) 깃 원격저장소 설정
+- 깃허브에 새로운 저장소를 생성한다.
+- ① github.com에 접속하여 로그인 -> ② 우상단 +기호를 좌클릭 ->
+  ③ 팝업에서 [New repository] 선택
+- 프로젝트 이름을 [Repository name] 항목에 입력하고 
+  ->나머지 항목을 기본값으로 유지한 후
+  [Create repository] 버튼을 눌러 저장소를 생성한다.
+
+- 생성한 원격저장소 페이지에서 원격저장소 주소를 복사한다.
+
+- 터미널에서 
+  git remote add origin {복사한 원격 저장소 주소}
+
+  cat .git/config (원격정보 확인)
+
+4. .gitignore 파일 설정
+ - 로그파일, 빌드 결과 파일등 깃에서 관리가 필요하지 않는 파일및폴더 지정
+>>> Spring boot -> .gitignore
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+### STS ###
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+### VS Code ###
+.vscode/
+
+
+5. 깃으로 파일 상태 확인
+- 깃에서 관리하는 파일은 Untracked(추적하지 않는) 와 Tracked(추적하는) 상태로 나뉜다.
+- 현재 작업 디렉토리에서 새로 생성된 파일은 Untracked 상태가 된다.
+
+  작업드렉토리 (Untractked)
+  스테이징 영역, 지역저장소 (Tracked)
+
+- git status (현재 파일 상태 확인)
+
+- git add 명령어로 커밋에 포함될 파일로 등록하면 파일 상태가 tracked 상태로 변경된다.
+
+  git add '파일명'
+  git add '폴더 이름'
+
+$ git add . (모든 파일 스테이지 영역으로 등록)
+$ git status 
+
+6. 커밋 생성(지역저장소에 등록)
+- git add로 스테이징 영역에 등록했다면 커밋을 할 수 있다.
+  git commit -m (커밋메세지를 간단히 입력할 수 있다.) 
+
+- git log로 현재 작업한 브랜치의 커밋 로그를 확인할 수 있다.
+- 깃에는 HEAD라는 특별한 포인터가 존재한다.
+  HEAD 포인터는 현재 작업하는 브랜치의 최종 커밋을 가리킨다.
+
+$ git commit -m "shopping 지역 저장소 등록"
+$ git log 
+
+7. 커밋 푸시
+- 지역저장소에 있는 커밋을 원격저장소에 등록
+- git romote add origin {복사한 원격저장소 주소}  : 원격저장소 등록
+- cat .git/config 확인
+
+- 저장된 커밋을 원격저장소에 등록
+ $git push origin master
+
+※인증 
+- 깃허브에서 제공하느는 개인용 엑세스 토근을 발급받아 해당 토큰을 패스워드로
+  사용한다.
+- 토근은 깃허브의 계정에서 [Settings] -> [Developer settings] -> [Personal access tokens]
+  [Generate new token]에서 생성한다.
+- 토큰 생성시 Select scopes항목에서 [repo]와 [workflow]를 선택한다.
+- Name :Access Token
+- Expiration : 90 days
+
+- 깃허브 원격저장소에 등록된 커밋 확인
+
+8. README.md 파일 수정해서 올리기
+
+$ git status
+$ git add .
+$ git status
+$ git commit -m "readme.md"
+$ git log
+$ git push origin master
+$ exit
+
+9. 원격저장소 복제
+- 원격저장소에서 복제할 폴더를 생성한다.
+  aistudy/github_download
+- 생성한 폴더에서 Git Bash 선택한다.
+  git clone '원격 저장소 주소' '프로젝트명'
+
+ $ git clone 'https://github.com/nosqljava/shopping.git' 'shopping'
+
+ - 생성된 폴더로 이동하여 복제된 내용확인
+ $ pwd
+ $ cd shopping
+ $ ls -a
+
+
+10. 협업을 위한 기능 issues 등록
+- 기능 수정이나. 기능 추가부분을 등록
+- [Issues] -> [New Issues] 
+-> [Label]설정 아이콘 클릭 ->아래부분 editor label -> New label ->
+   operation 라벨 생성
+- [Issues] -> [New Issues] -> 이슈 생성화면에서 작성
+
+
+11. Project 로드 생성 후 issues 연결
+ - 프로젝트 진행 사항을 팀원들 모두 확인할 수 있다.
+ - 상단 [Projects] -> [Projects (classic)] -> New classic project
+
+ - Project board name : shopping
+ - Description : 기본적인 쇼핑몰 기능 구현한다.
+ - Project template : Automated kanban
+
+- To do에서 3개의 note를 지운다.
+
+12. 프로젝트 보드에 생성된 이슈를 연결한다.
+ - [issues] -> 기존 이슈 -> Project에서 생성한 프로젝트 보드를 선택
+ - [Projects] To to에 이슈가 보인다. 
+ - 작업이 지작되면 In progress로 이동 시키고 
+ - 작업이 완료되어 머지를 한 상태이면 Done으로 이동 시킨다.
+ - 이슈에서 완료
+
+
+
+
+
+
