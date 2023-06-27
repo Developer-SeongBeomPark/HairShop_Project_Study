@@ -20,7 +20,7 @@
 
 
 
-
+https://ohaengsa.tistory.com/entry/%EC%9D%B8%ED%84%B0%EB%84%B7-%EC%9D%91%EC%9A%A9-%EB%B3%B4%EC%95%88-FTP%EC%9D%98-%ED%8A%B9%EC%A7%95%EA%B3%BC-%EB%B3%B4%EC%95%88-%EC%B7%A8%EC%95%BD%EC%A0%90
 
 
 
