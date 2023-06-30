@@ -85,7 +85,9 @@ war 파일이 잘 만들어졌는지는 다음과 같이 확인하면 된다.
 
 (내가 만든 network는 "springnetwork")
 
-```docker volume create [이름]``` --> ```docker volume ls``` ![image-20220726153753642](https://github.com/Developer-SeongBeomPark/HairShop_Project_Study/assets/63636555/6df58955-55c7-4491-b4b4-18d9a137e192)
+```docker volume create [이름]``` --> ```docker volume ls``` 
+
+![image-20220726153753642](https://github.com/Developer-SeongBeomPark/HairShop_Project_Study/assets/63636555/6df58955-55c7-4491-b4b4-18d9a137e192)
 
 
 
