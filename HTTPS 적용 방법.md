@@ -20,11 +20,11 @@
 
 "slqQSBrs4rToROM7LyEeBVvI92YXi3JJ-RK6S5OBKNc" --> 이 부분을 DNS TXT 레코드에 등록한다.
 
-![image-20220811102818274](HTTPS 적용 방법.assets/image-20220811102818274.png)
+![image-20220811102818274](https://github.com/Developer-SeongBeomPark/HairShop_Project_Study/assets/63636555/bf726fef-126e-4f50-9224-a871b5e9f0f6)
 
 TXT 레코드 등록 후 1분 정도 기다렸다가 Enter를 눌러준다.<br>
 
-![image-20220811103020569](HTTPS 적용 방법.assets/image-20220811103020569.png)
+![image-20220811103020569](https://github.com/Developer-SeongBeomPark/HairShop_Project_Study/assets/63636555/1c18c39f-bad6-4871-af08-b186d5542db4)
 
 이와 같은 형식의 ssl 인증서를 성공적으로 다운받은 것을 알 수 있다.
 
@@ -52,7 +52,7 @@ cd /etc/nginx/conf.d
 vim default.conf
 ```
 
-![image-20220811104028906](HTTPS 적용 방법.assets/image-20220811104028906.png)
+![image-20220811104028906](https://github.com/Developer-SeongBeomPark/HairShop_Project_Study/assets/63636555/92be5f28-4918-4b06-b01c-5c51ddf50a73)
 
 ESC + ":wq" + Enter를 통해 변경 내용을 저장한다.
 
@@ -60,8 +60,8 @@ ESC + ":wq" + Enter를 통해 변경 내용을 저장한다.
 
 ```docker restart nginx``` 후에 다음과 같은 결과가 나온다.
 
-![image-20220811104224950](HTTPS 적용 방법.assets/image-20220811104224950.png)
+![image-20220811104224950](https://github.com/Developer-SeongBeomPark/HairShop_Project_Study/assets/63636555/e551913e-be40-4fac-955a-b01674eea76a)
 
 <br>
 
-결과 : ![image-20220811104333547](HTTPS 적용 방법.assets/image-20220811104333547.png)
+결과 : ![image-20220811104333547](https://github.com/Developer-SeongBeomPark/HairShop_Project_Study/assets/63636555/b16391fc-1673-431b-92b1-005006e9acaf)
