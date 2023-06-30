@@ -14,7 +14,7 @@
 
 위 코드를 실행하면 다음과 같은 결과를 얻을 수 있다.
 
-![image-20220811102512210](HTTPS 적용 방법.assets/image-20220811102512210.png)
+![image-20220811102512210](https://github.com/Developer-SeongBeomPark/HairShop_Project_Study/assets/63636555/94009091-422d-4356-b0d2-4cb8230eab6d)
 
 
 
