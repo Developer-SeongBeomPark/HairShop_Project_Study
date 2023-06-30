@@ -1,4 +1,4 @@
-## Docker 
+## Docker를 활용한 배포
 
 
 
@@ -207,13 +207,11 @@ sudo apt install docker-ce
 
 ![image-20220726164948300](Docker.assets/image-20220726164948300.png)
 
+##### Putty 내에서 한글 적용
 
-
-<br><br><br>(+ 추가)
+---
 
 putty에서 mysql 접속해 select문으로 데이터를 출력하는 경우 한글이 "?" 로 출력될 수 있다.![image-20220729115112104](Docker.assets/image-20220729115112104.png)
-
-
 
 <br>
 
@@ -241,7 +239,7 @@ putty에서 mysql 접속해 select문으로 데이터를 출력하는 경우 한
 
 
 
-###### HTTP --> HTTPS 변경
+## HTTP --> HTTPS 변경
 
 - nginx 컨테이너
 
@@ -255,7 +253,7 @@ putty에서 mysql 접속해 select문으로 데이터를 출력하는 경우 한
 
 ```docker run -it --rm --name certbot -v /certbot/conf:/etc/letsencrypt -v /certbot/www:/var/www/certbot --network springnetwork certbot/certbot certonly  -d beomhair.shop --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory```<br>
 
-위 코드를 실행하면 다음과 같은 코드를 얻을 수 있다.
+위 코드를 실행하면 다음과 같은 결과를 얻을 수 있다.
 
 ![image-20220811102512210](Docker.assets/image-20220811102512210.png)
 
